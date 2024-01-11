@@ -1,0 +1,39 @@
+@import 'tailwindcss/base';
+@import 'tailwindcss/components';
+@import 'tailwindcss/utilities';
+
+
+/* .container {
+    width: 600px;
+    height: 1000px;
+    border: 3px solid #8f8e5c;
+    padding: 20px;
+    box-sizing: border-box;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 5%;
+    background-color: #fffea9;
+}
+
+.content {
+    background-color: #f0f0f0;
+    padding: 10px;
+    border-radius: 22px;
+}
+
+.listItem {
+    align-items: center;
+    line-height: 40px;
+    overflow: hidden;
+    
+}
+.liContainer {
+    width: 100%;
+    height: 40px;
+    border: 3px solid #8f8e5c;
+    display: flex;
+    box-sizing: border-box;
+}
+.deleteButton {
+    margin-left: 3%;
+} */
