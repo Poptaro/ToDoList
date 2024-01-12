@@ -3,40 +3,23 @@
 @import 'tailwindcss/utilities'; */
 
 
-.liDel{
+.liDel {
     background-color: red;
 }
-/* .container {
-    width: 600px;
-    height: 1000px;
-    border: 3px solid #8f8e5c;
-    padding: 20px;
-    box-sizing: border-box;
-    margin-left: auto;
-    margin-right: auto;
-    margin-top: 5%;
-    background-color: #fffea9;
+
+.listContainer {
+    border-style: solid;
+    padding: 5px;
 }
 
-.content {
-    background-color: #f0f0f0;
-    padding: 10px;
-    border-radius: 22px;
+.paper {
+    border: solid 2px rgb(0, 91, 107);
+    padding-right: 40px;
 }
-
-.listItem {
-    align-items: center;
-    line-height: 40px;
-    overflow: hidden;
-    
+.btnAdd {
+    background-color: white;
+    transition-duration: .4s;
 }
-.liContainer {
-    width: 100%;
-    height: 40px;
-    border: 3px solid #8f8e5c;
-    display: flex;
-    box-sizing: border-box;
+.btnAdd:hover {
+    background-color:rgb(194, 255, 194);
 }
-.deleteButton {
-    margin-left: 3%;
-} */

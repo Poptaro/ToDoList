@@ -1,31 +1,40 @@
 
 
 document.addEventListener('DOMContentLoaded', () => {
-    const btnAdd =  document.querySelector(".btnAdd");
-    const listed = document.querySelector(".mainList");
-    const inputField = document.querySelector(".inputField");
-    const btnDel = document.querySelector('.deleto');
-    let listDel = document.querySelector('.liDel')
 
+    const btnAdd =  document.querySelector(".btnAdd");
+    const listed = document.querySelector('.mainList');
+    const inputField = document.querySelector(".inputField");
+    let counter = 1;
 
 
     btnAdd.addEventListener('click', () => {
+        const itemId = Date.now();
         if(inputField.value.trim() === ''){
-            alert("You need to put SOMETHING IN THE TEXT BOX!!!!");
         } else {
-            const itemId = Date.now();
-            listed.insertAdjacentHTML(
-                'beforeend',
-                `<li id="${itemId}">${inputField.value}<button class="strike">-</button><button class="liDel">X</button></li>`
-            );
+            if (inputField.value.length > 100){
+                alert("too many characters. Please have less than 100.");
+            } else {
+                if (counter >= 10) {
+                    alert("There can only be 10 things listed at once.");
+                } else {
+                    listed.insertAdjacentHTML(
+                        'beforeend',
+                        `<li id="${itemId}"><p class="listContainer" contenteditable="plaintext-only">${inputField.value}</p><button class="strike">-</button><button class="liDel">X</button></li>`
+                    );
+                    counter++;
+                }
+            }
         }
-        inputField.value = '';
+        inputField.value ="";
     });
 
+    //listItem grabs the dynamic id from Date.now()!!!!!!!!!!
     document.addEventListener('click', (event) => {
         if (event.target.classList.contains('liDel')) {
             const listItem = event.target.closest('li');
             listItem.remove();
+            counter--;
         }
         if (event.target.classList.contains('strike')) {
             const listItem = event.target.closest('li');
@@ -37,13 +46,4 @@ document.addEventListener('DOMContentLoaded', () => {
 
         }
     });
-
-    // btnDel.addEventListener('click', () => {
-    //     if(listed.getElementsByTagName('li').length == 0){
-    //         alert("There is nothing to delete!");
-    //     } else {
-    //         const lasty = document.querySelector('li:last-child');
-    //         lasty.remove();
-    //     }
-    // })
 });
