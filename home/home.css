@@ -2,24 +2,63 @@
 @import 'tailwindcss/components';
 @import 'tailwindcss/utilities'; */
 
-
-.liDel {
-    background-color: red;
+.container {
+    margin: 20px;
 }
+
 
 .listContainer {
     border-style: solid;
     padding: 5px;
+    margin-bottom: 6px;
 }
 
 .paper {
     border: solid 2px rgb(0, 91, 107);
     padding-right: 40px;
 }
+.listTitle{
+    text-align: center;
+}
+
+.amount {
+    text-align: center;
+    margin-top: 14px;
+}
+.inputField {
+    width: 69%;
+}
+
+
+/* button below for adding */
 .btnAdd {
     background-color: white;
     transition-duration: .4s;
 }
+
 .btnAdd:hover {
     background-color:rgb(194, 255, 194);
+}
+/* buttons below for strikethrough and remove */
+
+
+.strike {
+    background-color: white;
+    transition-duration: .4s;
+    margin-right: 2px;
+}
+
+.strike:hover {
+    text-decoration:line-through;
+    text-decoration-color: rgba(43, 43, 43, 0.404);
+}
+
+.liDel {
+    background-color: white;
+    transition-duration: .4s;
+    margin-left: 2px;
+}
+
+.liDel:hover{
+    background-color: rgb(255, 130, 130);
 }

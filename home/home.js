@@ -5,28 +5,27 @@ document.addEventListener('DOMContentLoaded', () => {
     const btnAdd =  document.querySelector(".btnAdd");
     const listed = document.querySelector('.mainList');
     const inputField = document.querySelector(".inputField");
-    let counter = 1;
+    let counted = document.querySelector(".amount");
+    let counter = 10;
+
 
 
     btnAdd.addEventListener('click', () => {
         const itemId = Date.now();
         if(inputField.value.trim() === ''){
         } else {
-            if (inputField.value.length > 100){
-                alert("too many characters. Please have less than 100.");
+            if (counter <= 0) {
+                alert("There can only be 10 things listed at once.");
             } else {
-                if (counter >= 10) {
-                    alert("There can only be 10 things listed at once.");
-                } else {
-                    listed.insertAdjacentHTML(
-                        'beforeend',
-                        `<li id="${itemId}"><p class="listContainer" contenteditable="plaintext-only">${inputField.value}</p><button class="strike">-</button><button class="liDel">X</button></li>`
-                    );
-                    counter++;
-                }
+                listed.insertAdjacentHTML(
+                    'beforeend',
+                    `<li id="${itemId}"><p class="listContainer" contenteditable="plaintext-only">${inputField.value}</p><button class="strike">Strikethrough</button><button class="liDel">Remove</button></li>`
+                );
+                counter--;
+                counted.textContent = `You can add ${Math.abs(counter)} more items`;
             }
-        }
         inputField.value ="";
+        }
     });
 
     //listItem grabs the dynamic id from Date.now()!!!!!!!!!!
@@ -34,7 +33,8 @@ document.addEventListener('DOMContentLoaded', () => {
         if (event.target.classList.contains('liDel')) {
             const listItem = event.target.closest('li');
             listItem.remove();
-            counter--;
+            counter++;
+            counted.textContent = `You can add ${Math.abs(counter)} more items to the list`;
         }
         if (event.target.classList.contains('strike')) {
             const listItem = event.target.closest('li');
